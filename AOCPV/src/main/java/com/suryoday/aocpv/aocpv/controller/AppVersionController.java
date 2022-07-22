@@ -23,13 +23,14 @@ import com.suryoday.aocpv.aocpv.service.AocpService;
 
 
 @RestController
+@RequestMapping("/aocpv/v1")
 public class AppVersionController {
 
 	
 	@Autowired
 	AocpService  aocpvservice;
 	
-	 @RequestMapping(value="/v1/checkappversion", method = RequestMethod.POST,produces = "application/json")
+	 @RequestMapping(value="/checkappversion", method = RequestMethod.POST,produces = "application/json")
 	public ResponseEntity<Object> chekAppVersion(@RequestBody String bm,
 			 @RequestHeader(name = "X-Correlation-ID", required = true) String headerPersist,
 			 @RequestHeader(name = "X-From-ID", required = true) String X_From_ID,
@@ -155,7 +156,7 @@ public class AppVersionController {
 		}
 		
 	 
-		@PostMapping("/v1/preapprovallist")
+		@PostMapping("/preapprovallist")
 		public ResponseEntity<Object> getalldata(@RequestHeader(name = "X-Correlation-ID", required = true) String headerPersist,
 				 @RequestHeader(name = "X-From-ID", required = true) String X_From_ID,
 				 @RequestHeader(name = "X-To-ID", required = true) String X_To_ID,

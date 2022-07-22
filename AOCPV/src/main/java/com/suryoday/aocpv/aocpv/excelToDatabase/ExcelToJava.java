@@ -339,6 +339,8 @@ public class ExcelToJava {
 					break;
 					case 132:loanDetails.setAmount(cell.getNumericCellValue());
 					break;	
+					case 133:loanDetails.setCustomerID((long)cell.getNumericCellValue());
+					break;
 					default:
 						break;
 						

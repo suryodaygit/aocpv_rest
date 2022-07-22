@@ -17,8 +17,8 @@ import com.suryoday.aocpv.aocpv.pojo.LoanDetails;
 @Repository
 public interface LoanInputRepositery extends JpaRepository<LoanDetails, String>{
 
-		@Query(value = "SELECT new com.suryoday.aocpv.aocpv.pojo.LoanDetail(l.landPhoneNumber, l.referenceNo, l.customerID, l.memberName, l.dateOfBirth, l.address, l.state, l.postal, l.branchId, l.amount, l.status, l.createDate) from LoanDetails l where l.branchId =:b and l.status =:s")
+		@Query(value = "SELECT new com.suryoday.aocpv.aocpv.pojo.LoanDetail(l.mobilePhone, l.referenceNo, l.customerID, l.memberName, l.dateOfBirth, l.address, l.state, l.postal, l.branchId, l.amount, l.status, l.createDate) from LoanDetails l where l.branchId =:b and l.status =:s")
 		Optional<List<LoanDetail>> getByIdAndStatus(@Param("b") long branchId ,@Param("s") String status);
 
-		public Optional<LoanDetails> getByReferenceNo(String referenceNo);
+		public Optional<LoanDetails> getByCustomerID(long customerID);
 }

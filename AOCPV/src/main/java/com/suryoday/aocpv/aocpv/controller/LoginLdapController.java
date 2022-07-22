@@ -18,13 +18,14 @@ import com.suryoday.aocpv.aocpv.pojo.Preapproval;
 import com.suryoday.aocpv.aocpv.service.AocpService;
 
 @RestController
+@RequestMapping("/aocpv/v1")
 public class LoginLdapController {
 
 	
 	@Autowired
 	AocpService  aocpvservice;
 	
-	 @RequestMapping(value="/v1/netbanking/validate/user", method = RequestMethod.POST,produces = "application/json")
+	 @RequestMapping(value="/netbanking/validate/user", method = RequestMethod.POST,produces = "application/json")
 	public ResponseEntity<Object> login(@RequestBody String bm,
 			 @RequestHeader(name = "X-Correlation-ID", required = true) String headerPersist,
 			 @RequestHeader(name = "X-From-ID", required = true) String X_From_ID,

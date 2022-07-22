@@ -58,8 +58,9 @@ public class LoanInputServiceImpl implements LoanInputService {
 		throw new NoSuchElementException();
 	}
 	@Override
-	public LoanDetails getByReferenceNo(String referenceNo) {
-		Optional<LoanDetails> byReferenceNo = loanInputRepositery.getByReferenceNo(referenceNo);
+	public LoanDetails getByReferenceNo(String customerID) {
+		long custid= Long.parseLong(customerID);
+		Optional<LoanDetails> byReferenceNo = loanInputRepositery.getByCustomerID(custid);
 		if(byReferenceNo.isPresent()) {
 			return byReferenceNo.get();
 		}
